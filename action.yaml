@@ -1,0 +1,11 @@
+name: Tor Proxy
+description: Install Tor and expose SOCKS5 proxy on port 9050.
+runs:
+  using: "composite"
+  steps:
+    - run: sudo apt install tor
+      shell: bash
+    - run: sudo systemctl start tor
+      shell: bash
+    - run: sleep 15
+      shell: bash
